@@ -1,27 +1,24 @@
-import logo from './logo.svg';
+import React from 'react';
 import './App.css';
-import { AddCategory, GifGrid } from './componentes';
-
+import useCounter from './hooks/useCounter';
 
 function App() {
+  const counter = useCounter();
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <h1>Counter: {counter.count}</h1>
+      <button onClick={counter.increment}>Increment</button>
+      <button onClick={counter.decrement}>Decrement</button>
+      <button onClick={counter.reset}>Reset</button>
     </div>
   );
 }
 
 export default App;
+
+
+
+
+
+
